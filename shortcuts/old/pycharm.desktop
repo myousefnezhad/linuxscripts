@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=PyCharm
+Comment=Python;Pycharm
+Type=Application
+Encoding=UTF-8
+Exec=/home/common/programs/pycharm/bin/pycharm.sh
+Icon=/home/common/programs/pycharm/bin/pycharm.png
+Categories=GNOME;Application;Development;
+Terminal=false
+StartupNotify=true
+Name[en_US]=PyCharm

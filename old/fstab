@@ -1,0 +1,22 @@
+
+#
+# /etc/fstab
+# Created by anaconda on Sun Dec 22 20:11:13 2019
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk/'.
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info.
+#
+# After editing this file, run 'systemctl daemon-reload' to update systemd
+# units generated from this file.
+#
+UUID=0ac6c740-5a00-481c-b248-2268b984fb24 /                       ext4    defaults        1 1
+UUID=8f58f97c-adaa-4222-946a-0754c7c41d54 /DATA0                  ext4    defaults        1 2
+UUID=F8C4-E2E6          /boot/efi               vfat    umask=0077,shortname=winnt 0 2
+UUID=8cbaa866-c469-4baa-a4c8-39b0510b4c04 /home                   ext4    defaults        1 2
+UUID=339a97a2-eb79-49fb-8c35-96f77021c436 none                    swap    defaults        0 0
+/dev/disk/by-uuid/2eff1b89-1d54-4274-a3c5-cc8df1729979 /DATA1 auto defaults 0 0
+/dev/disk/by-uuid/2be9213f-4dbc-44a7-896a-ad2a30265796 /DATA2 auto defaults 0 0
+/dev/disk/by-id/usb-Seagate_Backup+_Hub_BK_NA9QGA5N-0:0-part1 /Backup auto defaults,noauto 0 0
+/dev/disk/by-uuid/28c6c607-df97-4b94-8380-8dc99afec556 /DATA auto defaults 0 0
+/dev/disk/by-uuid/8a227c58-889e-41cb-a3c6-91f8db865ac3 /DATA3 auto defaults 0 0
+/dev/disk/by-uuid/a9666b49-288c-4f48-96b0-ab5cd58ca60a /DATA4 auto defaults 0 0

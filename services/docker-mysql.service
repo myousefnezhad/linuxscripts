@@ -1,0 +1,12 @@
+    [Unit]
+    Description=MySql and phpMyAdmin Service
+    After=docker.service
+
+    [Service]
+    Type=simple
+    WorkingDirectory=/etc/sharelatex
+    ExecStart=/usr/bin/docker-compose -f /home/common/install/ymls/mysql.yml up
+    ExecStop=/usr/bin/docker-compose -f /home/common/install/ymls/mysql.yml down
+
+    [Install]
+    WantedBy=multi-user.target

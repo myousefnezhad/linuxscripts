@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=HDF View
+Exec=bash -c "/home/common/programs/HDFView/hdfview.sh %U"
+Icon=/home/common/install/icon/HDFView.png
+Type=Application
+Terminal=false
+Categories=Office;
+MimeType=text/plain

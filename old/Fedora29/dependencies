@@ -1,0 +1,5 @@
+#!/bin/bash
+#dnf install gcc dkms acpid make libglvnd-glx libglvnd-opengl  libglvnd-devel pkgconfig
+#dnf install kernel-devel kernel-headers gcc dkms make acpid libglvnd-glx libglvnd-opengl libglvnd-devel pkgconfig
+dnf install kernel-devel kernel-headers gcc dkms acpid libglvnd-glx libglvnd-opengl  libglvnd-devel pkgconfig xorg-x11-drv-nvidia-cuda
+#dnf install kernel-devel kernel-headers gcc dkms acpid libglvnd-glx libglvnd-opengl  libglvnd-devel pkgconfig xorg-x11-drv-nvidia xorg-x11-drv-nvidia-cuda akmod-nvidia

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Conky Autorun
+Exec=conky
+Icon=conky-logomark-violet
+Type=Application
+Terminal=false

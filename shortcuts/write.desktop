@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Stylus Labs Write
+Comment=Pen;Write
+Type=Application
+Encoding=UTF-8
+Exec=/home/common/install/write/Write
+Icon=/home/common/install/write/icon.png
+Categories=GNOME;Application;Development;
+Terminal=false
+StartupNotify=true
+Name[en_US]=Stylus Labs Write

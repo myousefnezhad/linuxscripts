@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Eclipse PHP
+Comment=Eclipse PHP
+Type=Application
+Encoding=UTF-8
+Exec=/home/common/programs/eclipse/eclipse-php/eclipse
+Icon=/home/common/programs/eclipse/eclipse-php/icon.xpm
+Categories=GNOME;Application;Development;
+Terminal=false
+StartupNotify=true
+Name[en_US]=Eclipse PHP

@@ -1,0 +1,4 @@
+#!/bin/bash
+mv /boot/initramfs-$(uname -r).img /boot/initramfs-$(uname -r)-nouveau.img
+dracut /boot/initramfs-$(uname -r).img $(uname -r)
+

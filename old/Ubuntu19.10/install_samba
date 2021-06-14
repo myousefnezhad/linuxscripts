@@ -1,0 +1,8 @@
+sudo apt install samba smbclient -y
+sudo cp /home/common/install/smb.conf  /etc/samba/.
+echo "Tony password..."
+sudo smbpasswd -a tony
+echo "Root password..."
+sudo smbpasswd -a root
+sudo systemctl enable smbd
+sudo systemctl start  smbd

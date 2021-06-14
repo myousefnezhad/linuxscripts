@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Android Studio Local
+Comment=Eclipse CPP
+Type=Application
+Encoding=UTF-8
+Exec=/home/common/programs/android-studio/android-studio/bin/studio.sh
+Icon=/home/common/programs/android-studio/android-studio/bin/studio.png
+Categories=GNOME;Application;Development;
+Terminal=false
+StartupNotify=true
+Name[en_US]=Android Studio Local

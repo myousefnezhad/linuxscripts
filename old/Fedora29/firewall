@@ -1,0 +1,9 @@
+#!/bin/bash
+sudo firewall-cmd --permanent --add-service=samba
+sudo firewall-cmd --permanent --add-service=samba-client
+sudo firewall-cmd --permanent --add-service=http
+sudo firewall-cmd --permanent --add-service=mysql
+firewall-cmd --permanent --add-port=1716/tcp
+firewall-cmd --permanent --add-port=1716/udp
+sudo firewall-cmd --reload
+sudo firewall-cmd --list-all

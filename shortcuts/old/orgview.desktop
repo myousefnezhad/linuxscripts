@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=/home/common/programs/OrgView/orgview
+Name=Orgin View
+Icon=/home/common/programs/OrgView/orgview.jpg
+Categories=Development;Math;Science
+Comment=Scientific computing environment
+StartupNotify=true
+StartupWMClass=com-mathworks-util-PostVMInit

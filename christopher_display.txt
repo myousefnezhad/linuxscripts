@@ -1,0 +1,8 @@
+1) install normal NVIDIA: 
+1.1 except do not block anything 
+1.2 but remove neov.. xorg
+1.3 xorg setting must copy
+
+2) the nvida-dkm.modeset shoud be 0 (default is 1)
+
+3) startup script must add in GNOME startup (it is a shortcut called "set resoulution for christopher")

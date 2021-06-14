@@ -1,0 +1,14 @@
+[Unit]
+Description=Jupyter Notebook
+AssertPathExists=/home/common/miniconda3/envs/easyfmri/bin
+ 
+[Service]
+Type=simple
+PIDFile=/run/jupyter.pid
+ExecStart=/bin/bash /home/common/install/jupyter/start-jupyter-service.sh
+WorkingDirectory=/home/tony/
+Restart=always
+RestartSec=10
+ 
+[Install]
+WantedBy=default.target

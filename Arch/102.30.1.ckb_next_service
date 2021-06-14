@@ -1,0 +1,3 @@
+sudo systemctl enable ckb-next-daemon
+
+sudo systemctl start ckb-next-daemon

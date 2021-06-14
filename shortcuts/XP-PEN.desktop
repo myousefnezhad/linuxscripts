@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=XP PEN
+Type=Application
+Encoding=UTF-8
+Exec=sudo /home/common/install/XPPEN/Pentablet_Driver
+Icon=/home/common/install/icon/xppen.png
+Categories=GNOME;Application;Development;
+Terminal=false
+StartupNotify=true
+Name[en_US]=XP PEN

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Eclipse CPP
+Comment=Eclipse CPP
+Type=Application
+Encoding=UTF-8
+Exec=/home/common/programs/eclipse/eclipse-cpp/eclipse
+Icon=/home/common/programs/eclipse/eclipse-cpp/icon.xpm
+Categories=GNOME;Application;Development;
+Terminal=false
+StartupNotify=true
+Name[en_US]=Eclipse CPP

@@ -1,0 +1,29 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/sdb3 during installation
+UUID=ac1e99fa-1aad-49d2-af93-fa74a6b2d440 /               ext4    errors=remount-ro 0       1
+# /boot/efi was on /dev/sdb1 during installation
+UUID=B00B-199C  /boot/efi       vfat    umask=0077      0       1
+# /home was on /dev/sdb2 during installation
+UUID=dcbd7000-6a60-49f0-9860-12e3a31a33dd /home           ext4    defaults        0       2
+# swap was on /dev/sdb4 during installation
+UUID=e091c712-2d44-4129-b292-a57b6a38ebd9 none            swap    sw              0       0
+
+# Data
+UUID=c6e3103d-f949-4ce9-a96c-573f76c2a19e /DATA    auto defaults 0 0
+UUID=c2c1c841-3af2-44f3-a97c-9ec4bd77b671 /DATA20  auto defaults 0 0
+UUID=061200de-2664-4813-b8e1-0c20dbcfa368 /DATA21  auto defaults 0 0
+UUID=05a4f1c2-4eba-4920-a2df-6a4c462acf56 /DATA22  auto defaults 0 0
+UUID=2eff1b89-1d54-4274-a3c5-cc8df1729979 /DATA1   auto defaults 0 0
+UUID=2be9213f-4dbc-44a7-896a-ad2a30265796 /DATA2   auto defaults 0 0
+UUID=a9666b49-288c-4f48-96b0-ab5cd58ca60a /DATA3   auto defaults 0 0
+UUID=df22d375-565c-44f7-bd38-08e20e7ffa10 /DATA4   auto defaults 0 0
+UUID=0425933e-a916-4a0e-8418-37f7ce7d2f1a /DATA5   auto defaults 0 0
+UUID=18d1deac-e8af-44f3-a7e0-33f6e1be998d /DATA30  auto defaults,auto,nofail 0 0
+UUID=25bb180e-1dcc-4340-aba2-efb36031d13f /DATA91  auto defaults,auto,nofail 0 0
+UUID=27479a94-6eaa-48da-bcef-7fe56751d4c3 /DATA90  auto defaults,auto,nofail 0 0

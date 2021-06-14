@@ -1,0 +1,41 @@
+
+plug_hifw_firewalld() {
+# plug hifw - plug hole in firewall for Fedora 18 
+# $1 - port
+	local FIREWALL_CMD=$(which firewall-cmd)
+	if ! [ -f "$FIREWALL_CMD" ]; then
+		log_message "cannot find file FIREWALL_CMD"
+		return 1
+	fi
+	
+	"$FIREWALL_CMD" --state
+	local STATUS="$?"
+	
+	"$FIREWALL_CMD" --permanent --remove-port=${1}/udp
+	
+	if [ "$STATUS" == "0" ] ; then
+		"$FIREWALL_CMD" --reload
+	fi
+}
+
+
+make_hifw_firewalld() {
+# mhifw - make hole in firewall for Fedora 18 
+# $1 - port
+	local FIREWALL_CMD=$(which firewall-cmd)
+	if ! [ -f "$FIREWALL_CMD" ]; then
+		log_message "cannot find file FIREWALL_CMD"
+		return 1
+	fi
+	
+	"$FIREWALL_CMD" --state
+	local STATUS="$?"
+	
+	"$FIREWALL_CMD" --permanent --remove-port=${1}/udp
+	"$FIREWALL_CMD" --permanent --add-port=${1}/udp
+	
+	if [ "$STATUS" == "0" ] ; then
+		"$FIREWALL_CMD" --reload
+	fi
+}
+

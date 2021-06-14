@@ -1,0 +1,2 @@
+sudo apt remove kdeconnect firefox chromium-browser
+sudo snap remove chromium

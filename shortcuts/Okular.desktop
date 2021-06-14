@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=GNOME Okular
+Comment=Okular;PDF;document
+Type=Application
+Encoding=UTF-8
+Exec=/home/common/install/bin/okular %f
+Icon=okular
+Categories=GNOME;Application;Development;
+Terminal=false
+StartupNotify=true
+Name[en_US]=GNOME Okular

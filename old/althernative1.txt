@@ -1,0 +1,139 @@
+I would like to share my knowledge about all the stuff that needs to make your NVIDIA card work on your linux Optimus laptop. Optimus means that it has an integrated graphics and a dedicated video card. You can check it with the lspci |grep -E "VGA|3D" command. If the the VGA and the 3D controller is different, your laptop is using Optimus technology. After identifying it you can do two things, first is using bumblebee that just let's you run an application in NVIDIA or you can make NVIDIA/Intel the main GPU (Prime).
+
+The steps for the NVIDIA prime:
+
+1.Getting the drivers and stuffs for installing it.
+
+Download the official NVIDIA driver from their website and then make it executable. sudo chmod +x /path/to/NVIDIA-Linux-*.run
+
+Update the system. sudo dnf update
+
+Install the dependencies that will need to install the driver:
+
+sudo dnf install kernel-devel kernel-headers gcc make dkms acpid libglvnd-glx libglvnd-opengl libglvnd-devel pkgconfig
+
+2.Blacklist the nouveau driver
+
+echo "blacklist nouveau" >> /etc/modprobe.d/blacklist.conf
+
+echo "blacklist nouveau" >> /etc/modprobe.d/blacklist-nouveau.conf
+
+echo "options nouveau modeset=0" >> /etc/modprobe.d/blacklist-nouveau.conf
+
+Edit your /etc/sysconfig/grub .
+
+Append rd.driver.blacklist=nouveau to the end of GRUB_CMDLINE_LINUX=”…”
+
+Itt will block out the nouveau driver when you start the system. You have to update after this the grub2 config.
+
+BIOS: grub2-mkconfig -o /boot/grub2/grub.cfg
+
+UEFI: grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
+
+Remove the nouveau xorg server. The xorg is the display server, it manages everything you see.
+
+dnf remove xorg-x11-drv-nouveau
+
+Backup your old initramfs nouveau image.
+
+mv /boot/initramfs-$(uname -r).img /boot/initramfs-$(uname -r)-nouveau.img
+
+Create the new initramfs image.
+
+dracut /boot/initramfs-$(uname -r).img $(uname -r)
+
+3.Configure the xorg server
+
+The xorg server first looks for a xorg.conf file and then for the default xorg.conf.d file. We have to make our xorg.conf file and edit it. I'll be using Vim, but you can use anything else.
+
+Open it. sudo vim /etc/X11/xorg.conf
+
+Parse into it:
+
+    Section "Module"
+
+        Load "modesetting"
+
+    EndSection
+
+    Section "Device"
+
+        Identifier "nvidia"
+
+        Driver "nvidia"
+
+        BusID "PCI:1:0:0"
+
+        Option "AllowEmptyInitialConfiguration"
+
+    EndSection
+
+Your BusID can be different, check with the lspci | grep -E "VGA|3D" command.
+
+You have to run some commands after the xorg server starts. First let's add them to your DM. I'll be showing with lightdm but you will find the others in the reference links.
+
+Make a script: sudo vim /etc/lightdm/display_setup.sh
+
+Parse into it:
+
+    xrandr --setprovideroutputsource modesetting NVIDIA-0
+
+    xrandr --auto
+
+Make it executable:
+
+sudo chmod +x /etc/lightdm/display_setup.sh
+
+Link to your lightdm configuration.
+
+sudo vim /etc/lightdm/lightdm.conf
+
+Edit display-setup-script line under the [Seat:*] part.
+
+    [Seat:*]
+
+    display-setup-script=/etc/lightdm/display_setup.sh
+
+After this you have to add the same commands to your users inital scripts.
+
+sudo vim ~/.xinitrc
+
+    xrandr --setprovideroutputsource modesetting NVIDIA-0
+
+    xrandr --auto
+
+4.Okay, we are almost there. All is left is installing the NVIDIA drivers.
+
+Reboot to runlevel 3
+
+systemctl set-default multi-user.target
+
+reboot
+
+After the laptop reboots install the downloaded run file
+
+./NVIDIA-Linux-*.run (You have to just choose yes for everything)
+
+Reboot to runlevel 5
+
+systemctl set-default graphical.target
+
+reboot
+
+After it reboots everything should be fine. Check it with the nvidia-installer -v |grep version command. To enable video acceleration support for your player (Note: you need Geforce 8 or later). dnf install vdpauinfo libva-vdpau-driver libva-utils
+
+My knowledge might be not the best but this is what I learnt after 2 hours of searching and working to make my GPU work :)
+
+Debugging
+
+If your laptops starts with a black screen and you get the terminal by pressing ctrl+alt+f1...f12 then the problem should be with your scripts with xrandr. You might messed up the linking part to your DM. Some thing if you get the DM but it will get's black after logging in. You have to check your .xinitrc.
+
+If you can't solve the problem or get the terminal you can get into runlevel 3 from GRUB and just delete the xorg.conf file. After you delete it the system should start with the default config with the intel card.
+
+Links
+
+Installing NVIDIA: https://www.if-not-true-then-false.com/2015/fedora-nvidia-guide/
+
+Configuring the Display Managers: https://wiki.archlinux.org/index.php/NVIDIA_Optimus
+
+Prime: https://devtalk.nvidia.com/default/topic/957814/linux/prime-and-prime-synchronization/

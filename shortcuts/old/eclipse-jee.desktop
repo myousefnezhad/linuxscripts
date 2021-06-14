@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Eclipse JEE
+Comment=Eclipse JEE
+Type=Application
+Encoding=UTF-8
+Exec=/home/common/programs/eclipse/eclipse-jee/eclipse
+Icon=/home/common/programs/eclipse/eclipse-jee/icon.xpm
+Categories=GNOME;Application;Development;
+Terminal=false
+StartupNotify=true
+Name[en_US]=Eclipse JEE

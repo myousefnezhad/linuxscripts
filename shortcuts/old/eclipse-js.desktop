@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Eclipse JS
+Comment=Eclipse JS
+Type=Application
+Encoding=UTF-8
+Exec=/home/common/programs/eclipse/eclipse-js/eclipse
+Icon=/home/common/programs/eclipse/eclipse-js/icon.xpm
+Categories=GNOME;Application;Development;
+Terminal=false
+StartupNotify=true
+Name[en_US]=Eclipse JS

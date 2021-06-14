@@ -1,0 +1,178 @@
+conky.config = {
+  alignment = 'top_right',
+  background = true,
+  border_width = 0.5,
+  cpu_avg_samples = 4,
+  default_color = 'white',
+  default_outline_color = 'grey',
+  default_shade_color = 'black',
+  draw_borders = true,
+  draw_graph_borders = true,
+  draw_outline = false,
+  draw_shades = false,
+  use_xft = true,
+  font = 'DejaVu Sans Mono:size=11',
+  gap_x = 30,
+  gap_y = 60,
+  maximum_width = 450,
+  minimum_height = 5,
+  minimum_width = 5,
+  net_avg_samples = 2,
+  double_buffer = true,
+  out_to_console = false,
+  out_to_stderr = false,
+  extra_newline = false,
+  own_window = true,
+  own_window_colour = '000000',
+  own_window_class = 'Conky',
+  own_window_argb_visual = true,
+  own_window_argb_value = 145,
+  own_window_type = 'dock',
+  own_window_transparent = false,
+  own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+  stippled_borders = 0,
+  update_interval = 1,
+  uppercase = false,
+  use_spacer = 'none',
+  show_graph_scale = false,
+  show_graph_range = false,
+  color0 = 'ffffff',
+  color1 = '00c4f5',
+  color2 = '58eb34',
+  color3 = 'f7f705',
+  color4 = 'f71d05',
+  color5 = 'f0e513',
+}
+
+
+
+conky.text = [[
+# General
+${font Open Sans:Bold:size=20}${color1}${exec hostname}${hr 2}$color${font}${offset 1}
+#Host $alignr${font Open Sans:Bold:size=10}${color1}General ${hr 2}$color${font}${offset 1}
+Distro $alignr ${execp cat /etc/os-release | grep "PRETTY_NAME=" | sed 's/PRETTY_NAME="//' | sed 's/"//'}
+Kernel $alignr $kernel
+Login  $alignr ${exec whoami}
+Uptime $alignr $uptime
+${if_empty ${execp command -v nvidia-smi}}${else}\
+NVIDIA driver $alignr ${exec nvidia-smi --query-gpu=driver_version  --format=csv,nounits,noheader}
+${endif}\
+#${if_match ${laptop_mode} != 0}\
+#${if_match ${battery_percent BAT1} <= 10}\
+#	${goto 10}${color FF1A21}${blink Battery:} \
+#$else \
+#	${goto 10}${color FF1A21}Battery: \
+#$endif\
+#${goto 102}${color}${voffset 2}${battery_bar 7,70 BAT1} ${voffset -1}${goto 180}${battery BAT1}${alignr}${battery_time BAT1}
+#$endif\
+# SYS
+${font Open Sans:Bold:size=10}${color1}System ${hr 2}$color${font}${offset 1}
+${if_match   ${cpu} < 30}${color2}CPU $alignr ${cpu}%
+${cpubar}${else}\
+${if_match   ${cpu} < 70}${color3}CPU $alignr ${cpu}%
+${cpubar}${else}\
+${color4}CPU $alignr ${cpu}%
+${cpubar}${endif}${endif}${color0}\
+${if_empty ${execp command -v nvidia-smi}}${else}
+${if_match   ${exec nvidia-settings -tq GPUUtilization | awk -F '[,= ]' '{ print $2 }'} < 30}${color2}GPU $alignr ${exec nvidia-settings -tq GPUUtilization | awk -F '[,= ]' '{ print $2 }'}%
+${execbar nvidia-settings -tq GPUUtilization | awk -F '[,= ]' '{ print $2 }'}${else}\
+${if_match   ${exec nvidia-settings -tq GPUUtilization | awk -F '[,= ]' '{ print $2 }'} < 70}${color3}GPU $alignr ${exec nvidia-settings -tq GPUUtilization | awk -F '[,= ]' '{ print $2 }'}%
+${execbar nvidia-settings -tq GPUUtilization | awk -F '[,= ]' '{ print $2 }'}${else}\
+${color4}GPU $alignr ${exec nvidia-settings -tq GPUUtilization | awk -F '[,= ]' '{ print $2 }'}%
+${execbar nvidia-settings -tq GPUUtilization | awk -F '[,= ]' '{ print $2 }'}${endif}${endif}${endif}${color0}
+${if_match   ${memperc} < 30}${color2}Memory $alignr  ${memperc}%
+${membar}
+${mem} $alignr ${memmax}${else}\
+${if_match   ${memperc} < 70}${color3}Memory $alignr ${memperc}%
+${membar}
+${mem} $alignr ${memmax}${else}\
+${color4}Memory $alignr ${memperc}%
+${membar}
+${mem} $alignr ${memmax}${endif}${endif}${color0}
+${if_match   ${swapperc} < 30}${color2}Swap $alignr  ${swapperc}%
+${swapbar}
+${swap} $alignr ${swapmax}${else}\
+${if_match   ${swapperc} < 70}${color3}Swap $alignr ${swapperc}%
+${swapbar}
+${swap} $alignr ${swapmax}${else}\
+${color4}Swap $alignr ${swapperc}%
+${swapbar}
+${swap} $alignr ${swapmax}${endif}${endif}${color0}
+${if_empty ${execp command -v nvidia-smi}}${else}${if_match   ${exec awk -v var1=$(nvidia-smi --format=csv,noheader,nounits --query-gpu=memory.used) -v var2=$(nvidia-smi --format=csv,noheader,nounits --query-gpu=memory.total) 'BEGIN { print  int ( ( var1 / var2 ) * 100) }'} < 30}${color2}GPU Memory $alignr  ${exec awk -v var1=$(nvidia-smi --format=csv,noheader,nounits --query-gpu=memory.used) -v var2=$(nvidia-smi --format=csv,noheader,nounits --query-gpu=memory.total) 'BEGIN { print  int ( ( var1 / var2 ) * 100) }'}%
+${execbar nvidia-smi --format=csv,noheader,nounits --query-gpu=utilization.memory | awk -F '[,= ]' '{ print $1 }'}
+${exec nvidia-smi --format=csv,noheader --query-gpu=memory.used | awk -F '[,= ]' '{ print $1 }'}MiB $alignr ${exec nvidia-smi --format=csv,noheader --query-gpu=memory.total | awk -F '[,= ]' '{ print $1 }'}MiB${else}\
+${if_match   ${awk -v var1=$(nvidia-smi --format=csv,noheader,nounits --query-gpu=memory.used) -v var2=$(nvidia-smi --format=csv,noheader,nounits --query-gpu=memory.total) 'BEGIN { print  int ( ( var1 / var2 ) * 100) }'} < 70}${color3}GPU Memory $alignr ${exec awk -v var1=$(nvidia-smi --format=csv,noheader,nounits --query-gpu=memory.used) -v var2=$(nvidia-smi --format=csv,noheader,nounits --query-gpu=memory.total) 'BEGIN { print  int ( ( var1 / var2 ) * 100) }'}%
+${execbar nvidia-smi --format=csv,noheader,nounits --query-gpu=utilization.memory | awk -F '[,= ]' '{ print $1 }'}
+${exec nvidia-smi --format=csv,noheader --query-gpu=memory.used | awk -F '[,= ]' '{ print $1 }'}MiB $alignr ${exec nvidia-smi --format=csv,noheader --query-gpu=memory.total | awk -F '[,= ]' '{ print $1 }'}MiB${else}\
+${color4}GPU Memory $alignr ${exec awk -v var1=$(nvidia-smi --format=csv,noheader,nounits --query-gpu=memory.used) -v var2=$(nvidia-smi --format=csv,noheader,nounits --query-gpu=memory.total) 'BEGIN { print  int ( ( var1 / var2 ) * 100) }'}%
+${execbar nvidia-smi --format=csv,noheader,nounits --query-gpu=utilization.memory | awk -F '[,= ]' '{ print $1 }'}
+${exec nvidia-smi --format=csv,noheader --query-gpu=memory.used | awk -F '[,= ]' '{ print $1 }'}MiB $alignr ${exec nvidia-smi --format=csv,noheader --query-gpu=memory.total | awk -F '[,= ]' '{ print $1 }'}MiB${endif}${endif}
+${endif}${color0}\
+# Temperature
+${font Open Sans:Bold:size=10}${color1}Temperature ${hr 2}$color${font}${offset 1}
+${execp  python3 /home/common/install/conky_temp.py}\
+# PROCESSES
+${font Open Sans:Bold:size=10}${color1}Processes ${hr 2}$color${font}${offset 1}
+${font Noto sans:size=8}${color EDE0FF}Name               ${alignr}PID   CPU%   MEM%
+${color 85f013}${top name 1} ${alignr}${top pid 1} ${top cpu 1} ${top mem 1}
+${color 85f013}${top name 2} ${alignr}${top pid 2} ${top cpu 2} ${top mem 2}
+${color 85f013}${top name 3} ${alignr}${top pid 3} ${top cpu 3} ${top mem 3}
+${color 85f013}${top name 4} ${alignr}${top pid 4} ${top cpu 4} ${top mem 4}
+# Network
+${font Open Sans:Bold:size=10}${color1}Network ${hr 2}$color${font}${offset 1}
+Public IP $alignr ${color f5a700}${exec wget http://ipinfo.io/ip -qO -}${color0}
+${if_existing /sys/class/net/enp7s0/operstate up}
+Interface $alignr${color5}enp7s0${color0}
+IP $alignr ${color f5a700}${addr enp7s0}${color0}
+D ${color4}${downspeed enp7s0}${color0}${alignr}U ${color2}${upspeed enp7s0}${color0}
+${downspeedgraph enp7s0 25,150 f71d05 58eb34 0} ${alignr}${upspeedgraph enp7s0 25,150 f71d05 58eb34 0}
+Total ${totaldown enp7s0} ${alignr}Total ${totalup enp7s0}
+${endif}${if_existing /sys/class/net/enp6s0/operstate up} 
+Interface $alignr${color5}enp6s0${color0} 
+IP $alignr ${color f5a700}${addr enp6s0}${color0} 
+D ${color4}${downspeed enp6s0}${color0}${alignr}U ${color2}${upspeed enp6s0}${color0} 
+${downspeedgraph enp6s0 25,150 f71d05 58eb34 0} ${alignr}${upspeedgraph enp6s0 25,150 f71d05 58eb34 0} 
+Total ${totaldown enp6s0} ${alignr}Total ${totalup enp6s0} 
+${endif}${if_existing /sys/class/net/enp58s0u1/operstate up}
+Interface $alignr${color5}enp58s0u1${color0}
+IP $alignr ${color f5a700}${addr enp58s0u1}${color0}
+D ${color4}${downspeed enp58s0u1}${color0}${alignr}U ${color2}${upspeed enp58s0u1}${color0}
+${downspeedgraph enp58s0u1 25,150 f71d05 58eb34 0} ${alignr}${upspeedgraph enp58s0u1 25,150 f71d05 58eb34 0}
+Total ${totaldown enp58s0u1} ${alignr}Total ${totalup enp58s0u1}
+${endif}${if_existing /sys/class/net/ens20u1/operstate up}
+Interface $alignr${color5}ens20u1${color0}
+IP $alignr ${color f5a700}${addr ens20u1}${color0}
+D ${color4}${downspeed ens20u1}${color0}${alignr}U ${color2}${upspeed ens20u1}${color0}
+${downspeedgraph ens20u1 25,150 f71d05 58eb34 0} ${alignr}${upspeedgraph ens20u1 25,150 f71d05 58eb34 0}
+Total ${totaldown ens20u1} ${alignr}Total ${totalup ens20u1}
+${endif}${if_existing /sys/class/net/wlp4s0/operstate up}
+Interface $alignr${color5}wlp4s0${color0}
+IP $alignr ${color f5a700}${addr wlp4s0}${color0}
+D ${color4}${downspeed wlp4s0}${color0}${alignr}U ${color2}${upspeed wlp4s0}${color0}
+${downspeedgraph wlp4s0 25,150 f71d05 58eb34 0} ${alignr}${upspeedgraph wlp4s0 25,150 f71d05 58eb34 0}
+Total ${totaldown wlp4s0} ${alignr}Total ${totalup wlp4s0}
+${endif}${if_existing /sys/class/net/wlp59s0/operstate up}
+Interface $alignr${color5}wlp59s0${color0}
+IP $alignr ${color f5a700}${addr wlp59s0}${color0}
+D ${color4}${downspeed wlp59s0}${color0}${alignr}U ${color2}${upspeed wlp59s0}${color0}
+${downspeedgraph wlp59s0 25,150 f71d05 58eb34 0} ${alignr}${upspeedgraph wlp59s0 25,150 f71d05 58eb34 0}
+Total ${totaldown wlp59s0} ${alignr}Total ${totalup wlp59s0}
+${endif}${if_existing /sys/class/net/wlo1/operstate up}
+Interface $alignr${color5}wlo1${color0}
+IP $alignr ${color f5a700}${addr wlo1}${color0}
+D ${color4}${downspeed wlo1}${color0}${alignr}U ${color2}${upspeed wlo1}${color0}
+${downspeedgraph wlo1 25,150 f71d05 58eb34 0} ${alignr}${upspeedgraph wlo1 25,150 f71d05 58eb34 0}
+Total ${totaldown wlo1} ${alignr}Total ${totalup wlo1}
+${endif}${if_up usb0}
+Interface $alignr${color5}USB0${color0}
+D ${color4}${downspeed usb0}${color0}${alignr}U ${color2}${upspeed usb0}${color0}
+${downspeedgraph usb0 25,150 f71d05 58eb34 0} ${alignr}${upspeedgraph usb0 25,150 f71d05 58eb34 0}
+Total ${totaldown usb0} ${alignr}Total ${totalup usb0}
+${endif}${if_up tun0}
+Interface $alignr${color5}TUN0${color0}
+D ${color4}${downspeed tun0}${color0}${alignr}U ${color2}${upspeed tun0}${color0}
+${downspeedgraph tun0 25,150 f71d05 58eb34 0} ${alignr}${upspeedgraph tun0 25,150 f71d05 58eb34 0}
+Total ${totaldown tun0} ${alignr}Total ${totalup tun0}
+${endif}
+]]
+

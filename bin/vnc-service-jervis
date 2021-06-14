@@ -1,0 +1,1 @@
+ssh -t 192.168.2.80 'x11vnc -forever -noxdamage -display :1'

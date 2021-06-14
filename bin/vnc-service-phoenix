@@ -1,0 +1,1 @@
+ssh -t -L 5900:localhost:5900 192.168.2.50 'x11vnc -localhost -display :0'

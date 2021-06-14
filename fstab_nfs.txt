@@ -1,0 +1,14 @@
+
+192.168.2.120:/DATA                        /DATA           nfs 	   nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0 
+192.168.2.120:/DATA1                       /DATA1          nfs     nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0 
+192.168.2.120:/DATA2                       /DATA2          nfs     nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
+192.168.2.120:/DATA3                       /DATA3          nfs     nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
+192.168.2.120:/DATA4                       /DATA4          nfs     nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
+192.168.2.120:/DATA5                       /DATA5          nfs     nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
+192.168.2.120:/DATA20                      /DATA20         nfs     nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
+192.168.2.120:/DATA21                      /DATA21         nfs     nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
+192.168.2.120:/DATA22                      /DATA22         nfs     nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
+192.168.2.120:/DATA30                      /DATA30         nfs     nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
+192.168.2.120:/DATA90                      /DATA90         nfs     nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
+192.168.2.120:/DATA91                      /DATA91         nfs     nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
+

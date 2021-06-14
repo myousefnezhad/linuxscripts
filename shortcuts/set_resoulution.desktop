@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=/home/common/install/bin/set_resolution_christopher.sh
+Icon=/home/common/programs/b1/b1.png
+Type=Application
+Terminal=false
+Name=Set Resoultion for Christopher
+GenericName=Set Resoulution for Christopher

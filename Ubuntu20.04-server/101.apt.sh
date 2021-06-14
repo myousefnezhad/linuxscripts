@@ -1,0 +1,2 @@
+sudo apt install samba smbclient openssh-server mc aptitude cmake git jcal openjdk-11-jdk  tcsh xfonts-base gsl-bin netpbm xvfb xterm vim curl npm autoconf automake python-dev-is-python2 kakoune net-tools tree dkms rar unrar lm-sensors htop nmap geeqie wget traceroute tmux iftop openfortivpn cmatrix neofetch tint snapd fonts-powerline gadmin-rsync gpac mkvtoolnix zsh awscli xclip hexedit gcc make cmake libpng-dev sysstat htop glances xpra kalgebra iftop monitorix flatpak x11vnc screenfetch atop iotop
+

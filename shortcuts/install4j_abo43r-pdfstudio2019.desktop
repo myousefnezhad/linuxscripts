@@ -1,0 +1,8 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=PDF Studio 2019
+Exec="/home/common/programs/pdfstudio2019/pdfstudio2019" %U
+Icon=/home/common/programs/pdfstudio2019/.install4j/pdfstudio2019.png
+Categories=Office;
+StartupWMClass=install4j-com-qoppa-pdfStudio-pub-PDFStudio

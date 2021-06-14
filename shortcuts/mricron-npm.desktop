@@ -1,0 +1,9 @@
+[Desktop Entry]
+GenericName=Non-parametric MRI Analysis
+Name=NPM
+Exec=/home/common/programs/mricron/mricron-npm
+TryExec=/home/common/programs/mricron/mricron-npm
+Type=Application
+Terminal=false
+Categories=Education;Graphics;Science;MedicalSoftware;GTK;
+Icon=/home/common/programs/mricron/mricron.xpm

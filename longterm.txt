@@ -1,0 +1,14 @@
+https://copr.fedorainfracloud.org/coprs/kwizart/
+
+Switch to kernel longterm 4.19
+
+    sudo dnf copr enable kwizart/kernel-longterm-4.19
+
+    sudo dnf install kernel-longterm
+
+    sudo reboot
+
+Install devel packages for external kernel modules needs
+
+    sudo dnf install kernel-longterm-devel
+

@@ -1,0 +1,55 @@
+#! /usr/bin/env python3
+
+import subprocess
+import sys
+import os
+import getpass
+
+OKULAR_FN = "okular"
+
+def get_okular_instance(filename) :
+    try :
+        lproc = subprocess.check_output(["ps", "-C", OKULAR_FN, "-o", "pid,user,args", "--no-headers"], universal_newlines=True).splitlines()
+    except subprocess.CalledProcessError :
+        return []
+    result = []
+    me = getpass.getuser()
+    for proc in lproc :
+        pid, user, _, args = proc.split(maxsplit=3)
+        if user == me and args == filename :
+            result.append(pid)
+    return result
+
+def get_window_id(pid) :
+    fenetres = subprocess.check_output(["wmctrl", "-ulp"], universal_newlines=True)
+    for f in fenetres.splitlines() :
+        donnees = f.split()
+        if len(donnees) < 3 :
+            continue
+        if donnees[2] == pid :
+            return donnees[0]
+    return None
+
+def raise_window(wid) :
+    subprocess.call(["wmctrl", "-i", "-a", wid])
+
+def runcmd(cmdl) :
+    subprocess.Popen(cmdl, stdin=None, stdout=None, stderr=None, close_fds=True)
+
+def main() :
+    if len(sys.argv) < 2 :
+        runcmd([OKULAR_FN])
+    else :
+        filename = os.path.abspath(sys.argv[1])
+        pidl = get_okular_instance(filename)
+        if len(pidl) != 1 :
+            runcmd([OKULAR_FN, filename])
+        else :
+            wid = get_window_id(pidl[0])
+            if wid is None :
+                runcmd([OKULAR_FN, filename])
+            else :
+                raise_window(wid)
+
+if __name__ == "__main__" :
+    main()

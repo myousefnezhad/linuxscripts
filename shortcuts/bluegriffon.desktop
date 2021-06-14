@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Blue Griffon
+Comment=web;html;css;
+Type=Application
+Encoding=UTF-8
+Exec=/home/common/programs/bluegriffon/bluegriffon
+Icon=/home/common/install/icon/bluegriffon.png
+Categories=GNOME;Application;Development;
+Terminal=false
+StartupNotify=true
+Name[en_US]=Blue Griffon

@@ -1,0 +1,1 @@
+sh ../zsh/ohmyzsh.sh

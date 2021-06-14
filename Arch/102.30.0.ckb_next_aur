@@ -1,0 +1,1 @@
+sudo -u aurbuilder yay -Syu --needed ckb-next

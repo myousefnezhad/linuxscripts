@@ -1,0 +1,9 @@
+[Desktop Entry]
+Exec=/home/common/install/winbox/winbox
+Icon=/home/common/install/winbox/winbox.png
+Type=Application
+Terminal=false
+Name=Winbox
+GenericName=B1 Free Archiver
+MimeType=application/x-b1
+Categories=Utility;Network;Mikrotik

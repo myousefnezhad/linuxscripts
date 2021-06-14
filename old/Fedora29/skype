@@ -1,0 +1,5 @@
+#!/bin/bash
+cd ~
+wget --trust-server-names https://go.skype.com/skypeforlinux-64.rpm
+sudo dnf install ~/skypeforlinux-64.rpm
+rm ~/skypeforlinux-64.rpm

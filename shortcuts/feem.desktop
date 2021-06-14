@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Feem
+Comment=Feem: Share Files Offline
+Exec=/home/common/programs/feem/Feem_Linux_4.2.6_beta_Installer.AppImage
+Icon=/home/common/programs/feem/Feem.png
+Categories=Application;Utility;
+Version=4.0.91
+Type=Application
+Terminal=false
+X-GNOME-Autostart-enabled=true
+Keywords=wifi;file;

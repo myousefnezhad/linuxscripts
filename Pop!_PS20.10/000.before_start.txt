@@ -1,0 +1,3 @@
+1) sudo -i
+2) passwd
+3) apt source update manually

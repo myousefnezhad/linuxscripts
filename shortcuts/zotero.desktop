@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Zotero
+Exec=bash -c "/home/common/zotero/zotero -url %U"
+Icon=/home/common/install/icon/zotero.png
+Type=Application
+Terminal=false
+Categories=Office;
+MimeType=text/plain

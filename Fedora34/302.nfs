@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sudo ln -sf /home/common/install/exports /etc/exports
+
+sudo  dnf -y install nfs-utils
+
+sudo exportfs -a
+
+sudo systemctl enable --now rpcbind nfs-server 
+

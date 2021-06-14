@@ -1,0 +1,5 @@
+cd /home/common/install
+git pull
+cd
+sudo dnf update --refresh -y
+sudo flatpak update -y

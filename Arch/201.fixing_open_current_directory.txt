@@ -1,0 +1,9 @@
+edit following file:
+
+sudo vim /usr/share/applications/mimeinfo.cache
+
+find 'inode/directory' and set it as follows:
+
+inode/directory=org.gnome.Nautilus.desktop;
+
+then restart GNOME.

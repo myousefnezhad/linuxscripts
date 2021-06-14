@@ -1,0 +1,5 @@
+#!/bin/bash
+cd ~
+wget https://atom.io/download/rpm -O ~/atom.rpm
+sudo dnf localinstall ~/atom.rpm
+rm ~/atom.rpm

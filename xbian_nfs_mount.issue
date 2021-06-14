@@ -1,0 +1,10 @@
+Create a file at: /etc/network/if-up.d/fstab
+
+Add this to it:
+
+#!/bin/sh
+mount -a
+Make the file executable:
+
+sudo chmod +x /etc/network/if-up.d/fstab
+You are directing the system at boot time to issue a mount -a after the network stack is up and operation which if it's like a cifs mount in fstab is the reason your shares are not mounting at boot.
