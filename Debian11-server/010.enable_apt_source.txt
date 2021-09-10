@@ -1,0 +1,8 @@
+See:
+https://wiki.debian.org/NvidiaGraphicsDrivers
+
+Add:
+
+non-free contrib
+
+in /etc/apt/source.list
