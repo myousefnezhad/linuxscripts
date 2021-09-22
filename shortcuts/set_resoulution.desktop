@@ -3,5 +3,5 @@ Exec=/home/common/install/bin/set_resolution_christopher
 Icon=/home/common/programs/b1/b1.png
 Type=Application
 Terminal=false
-Name=Set Resoultion for Christopher
-GenericName=Set Resoulution for Christopher
+Name=DellDock3100
+GenericName=DellDock3100
