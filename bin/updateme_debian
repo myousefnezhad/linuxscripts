@@ -1,0 +1,6 @@
+cd /home/common/install
+git pull
+cd
+sudo apt update
+sudo apt upgrade -y
+sudo flatpak update -y
