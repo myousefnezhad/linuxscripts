@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=/home/common/install/bin/ipcam_living
+Icon=/home/common/install/icon/ipcamera.png
+Type=Application
+Terminal=false
+Name=IPCAM (Living)
+GenericName=IPCAM (Living)
