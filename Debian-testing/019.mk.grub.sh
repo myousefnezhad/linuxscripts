@@ -1,1 +1,1 @@
-sudo grub-mkconfig -o /boot/efi/EFI/ubuntu/grub.cfg
+sudo grub-mkconfig -o /boot/efi/EFI/debian/grub.cfg
