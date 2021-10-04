@@ -23,4 +23,5 @@
 # m h  dom mon dow   command
 0 */4  * * *  bash /home/common/install/bin/report_cron_service.sh
 0  0   * * *  bash /home/common/install/bin/backup.sh
-
+0  3   * * *  sudo -s "/home/common/bin/backup_mysql.sh"
+15 3   * * *  bash /home/common/install/bin/backup_uoa.sh
