@@ -135,7 +135,7 @@ autoload -U compinit && compinit
 # Startup Script
 source /home/common/install/zstartupscript.sh
 # Common bin dir
-export PATH="/home/common/bin:/var/lib/snapd/snap/bin:$PATH"
+export PATH="/home/common/bin:/var/lib/snapd/snap/bin:/home/common/node/bin:$PATH"
 
 export SASS=sassc
 export SHELL=/bin/zsh
