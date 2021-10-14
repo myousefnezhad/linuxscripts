@@ -10,7 +10,7 @@ sudo docker volume create mysql-data
 sudo docker volume inspect mysql-data
 sudo ln -s /var/lib/docker/volumes/mysql-data/_data /mysql
 sudo docker run -d --name mysql-server -v mysql-data:/var/lib/mysql --network=phpmyadmin-network -e "MYSQL_ROOT_PASSWORD=P@SsW0rD" -p 6033:3306 --restart always mysql:latest
-sudo docker run -d --name phpmyadmin -p 8081:80 --network phpmyadmin-network -e PMA_HOST=mysql-server --restart always phpmyadmin/phpmyadmin
+sudo docker run -d --name phpmyadmin -p 8081:80 --network phpmyadmin-network -e PMA_HOST=mysql-server -e UPLOAD_LIMIT=1048576K --restart always phpmyadmin/phpmyadmin
 
 
 #sudo mkdir -p /etc/docker_mysql/
