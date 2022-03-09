@@ -6,10 +6,10 @@ RSY_ROOT=("/DATA30/Documents" "/DATA30/Documents")
 RST_NAME=("Topics" "Papers")
 RSY_SCR=("/DATA/Documents/Topics" "/DATA/Documents/Papers")
 RSY_DST=("/DATA30/Documents/. " "/DATA30/Documents/. ")
-RCO_ROOT=("/DATA90/Datasets" "/DATA91/Dataset2")
-RCO_NAME=("Datasets" "Dataset2")
-RCO_SCR=("/DATA/Datasets" "/DATA/Dataset2")
-RCO_DST=("/DATA90/Datasets" "/DATA91/Dataset2")
+#RCO_ROOT=()
+#RCO_NAME=()
+#RCO_SCR=()
+#RCO_DST=()
 ####################################################################################
 ####################################################################################
 ####################################################################################
@@ -46,21 +46,21 @@ for i in ${!RSY_ROOT[@]}; do
 done
 write_log "BACKUP::RSYNC::STOP"
 ## RCLONE BACKUP
-write_log "BACKUP::RCLONE::START"
-for j in ${!RCO_ROOT[@]}; do
-	rclone_root=${RCO_ROOT[$j]}
-	rclone_name=${RCO_NAME[$j]}
-	rclone_source=${RCO_SCR[$j]}
-	rclone_destination=${RCO_DST[$j]}
-	if [ -d $rclone_root ]
-	then
-		write_log "BACKUP::RCLONE::SYNCING::$rclone_name"
-                rclone -v sync $rclone_source $rclone_destination
-		write_log "BACKUP::RCLONE::SYNCED::$rclone_name"
-	else
-		write_log "BACKUP::RCLONE::ROOT_NOT_FOUND::$rclone_name"
-	fi
-done
-write_log "BACKUP::RCLONE::STOP"
-write_log "BACKUP::STOP"
+#write_log "BACKUP::RCLONE::START"
+#for j in ${!RCO_ROOT[@]}; do
+#	rclone_root=${RCO_ROOT[$j]}
+#	rclone_name=${RCO_NAME[$j]}
+#	rclone_source=${RCO_SCR[$j]}
+#	rclone_destination=${RCO_DST[$j]}
+#	if [ -d $rclone_root ]
+#	then
+#		write_log "BACKUP::RCLONE::SYNCING::$rclone_name"
+#                rclone -v sync $rclone_source $rclone_destination
+#		write_log "BACKUP::RCLONE::SYNCED::$rclone_name"
+#	else
+#		write_log "BACKUP::RCLONE::ROOT_NOT_FOUND::$rclone_name"
+#	fi
+#done
+#write_log "BACKUP::RCLONE::STOP"
+#write_log "BACKUP::STOP"
 # Stop Backup
