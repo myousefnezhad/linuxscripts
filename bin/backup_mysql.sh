@@ -1,1 +1,1 @@
-sudo mysqldump -u root nextcloud > /DATA22/BackupMySQL/nextcloud-backup-$(date +%F_%T).sql 
+sudo mysqldump -u root nextcloud > /DATA21/BackupMySQL/nextcloud-backup-$(date +%F_%T).sql 
