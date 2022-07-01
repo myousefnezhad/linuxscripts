@@ -19,16 +19,23 @@ rm -rf $HOME/Public
 rm -rf $HOME/Documents
 
 # Creating Links
+ls -sf /DATA/Archive   $HOME/Archive
 ln -sf /DATA/Downloads $HOME/Downloads
 ln -sf /DATA/Documents $HOME/Documents
 ln -sf /DATA/Music $HOME/Music
 ln -sf /DATA/Pictures $HOME/Pictures
 ln -sf /DATA/Videos $HOME/Videos
 ln -sf /home/common $HOME/common
-ln -sf /DATA/Datasets $HOME/datasets
-ln -sf /DATA/Dataset2 $HOME/dataset2
+ln -sf /DATA/Datasets.bak $HOME/datasets.bak
 ln -sf /DATA/Datasets.mini $HOME/datasets.mini
-ln -sf /DATA/Workspace $HOME/workspace
+ln -sf /DATA/Datasets2  $HOME/dataset2
+ln -sf /DATA/Datasets3  $HOME/dataset3
+ln -sf /DATA/Datasets4  $HOME/dataset4
+ln -sf /DATA/Datasets5  $HOME/dataset5
+ln -sf /DATA/Datasets30 $HOME/dataset30
+ln -sf /DATA/Datasets90 $HOME/dataset90
+ln -sf /DATA/Datasets91 $HOME/dataset91
+ln -sf /DATA/Workspace $HOME/Workspace
 ln -sf /DATA $HOME/DATA
 
 # Reset Nautilus
