@@ -19,7 +19,7 @@ rm -rf $HOME/Public
 rm -rf $HOME/Documents
 
 # Creating Links
-ls -sf /DATA/Archive   $HOME/Archive
+ln -sf /DATA/Archive   $HOME/Archive
 ln -sf /DATA/Downloads $HOME/Downloads
 ln -sf /DATA/Documents $HOME/Documents
 ln -sf /DATA/Music $HOME/Music
