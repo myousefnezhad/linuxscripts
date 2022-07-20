@@ -1,0 +1,1 @@
+sudo dracut --force
