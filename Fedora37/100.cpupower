@@ -1,0 +1,3 @@
+#!/bin/bash
+sudo dnf install -y kernel-tools
+sudo sed -i 's|frequency-set -g performance|frequency-set -g ondemand|g' /etc/sysconfig/cpupower
