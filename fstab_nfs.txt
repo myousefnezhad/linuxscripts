@@ -1,14 +1,15 @@
 
-172.20.10.1:/DATA                        /DATA           nfs 	   _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0 
-172.20.10.1:/DATA1                       /DATA1          nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0 
-172.20.10.1:/DATA2                       /DATA2          nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
-172.20.10.1:/DATA3                       /DATA3          nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
-172.20.10.1:/DATA4                       /DATA4          nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
-172.20.10.1:/DATA5                       /DATA5          nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
-172.20.10.1:/DATA20                      /DATA20         nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
-172.20.10.1:/DATA21                      /DATA21         nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
-172.20.10.1:/DATA22                      /DATA22         nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
-172.20.10.1:/DATA30                      /DATA30         nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
-172.20.10.1:/DATA90                      /DATA90         nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
-172.20.10.1:/DATA91                      /DATA91         nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
+# NFS Data Service
+192.168.20.1:/DATA                        /DATA           nfs 	   _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0 
+192.168.20.1:/DATA1                       /DATA1          nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0 
+192.168.20.1:/DATA2                       /DATA2          nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
+192.168.20.1:/DATA3                       /DATA3          nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
+192.168.20.1:/DATA4                       /DATA4          nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
+192.168.20.1:/DATA5                       /DATA5          nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
+192.168.20.1:/DATA20                      /DATA20         nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
+192.168.20.1:/DATA21                      /DATA21         nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
+192.168.20.1:/DATA22                      /DATA22         nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
+192.168.20.1:/DATA30                      /DATA30         nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
+192.168.20.1:/DATA90                      /DATA90         nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
+192.168.20.1:/DATA91                      /DATA91         nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
 
