@@ -12,3 +12,7 @@ sudo docker exec -t postgres-server pg_dumpall -c -U test > dump_`date +%d-%m-%Y
 
 cat dump_19-10-2021_19_57_15.sql  | sudo docker exec -i postgres-server psql -U postgres -d test1
 
+
+
+sudo docker run --name postgres-server -p 5432:5432 -e POSTGRES_PASSWORD=P@SsW0rD -e PGDATA=/var/lib/postgresql/data/pgdata -v /DATA22/postgresql:/var/lib/postgresql/data -e LANGUAGE="en_US.UTF-8" -e LANG="en_US.UTF-8" -e LC_ALL="en_US.UTF-8" -e TZ="America/Edmonton" -e PGTZ="America/Edmonton" -e TIMEZONE="America/Edmonton" --restart always -d postgres:alpine
+
