@@ -1,0 +1,4 @@
+
+# NFS THOR
+172.20.20.40:/THOR1                       /THOR1          nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0 
+172.20.20.40:/THOR2                       /THOR2          nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
