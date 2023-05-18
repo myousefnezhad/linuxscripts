@@ -1,8 +1,8 @@
 # Remove old backup script
 ##################################### Parameters ###################################
 LOG_FILE_FORMAT=$(date +%Y.%m.ipcam)
-LOG_PATH="/DATA/logs/$LOG_FILE_FORMAT"
-CAM_ROOT="/DATA1/ipcam/*"
+LOG_PATH="/IRONMAN/logs/$LOG_FILE_FORMAT"
+CAM_ROOT="/IRONMAN1/ipcam/*"
 CAM_TEMP="$LOG_PATH.list.txt"
 ####################################################################################
 ####################################################################################

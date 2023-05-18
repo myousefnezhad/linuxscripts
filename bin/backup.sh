@@ -1,11 +1,11 @@
 # Backup Script
 ##################################### Parameters ###################################
 LOG_FILE_FORMAT=$(date +%Y.%m.backup)
-LOG_PATH="/DATA/logs/$LOG_FILE_FORMAT"
-RSY_ROOT=("/DATA30/Documents" "/DATA30/Documents")
-RST_NAME=("Topics" "Papers")
-RSY_SCR=("/DATA/Documents/Topics" "/DATA/Documents/Papers")
-RSY_DST=("/DATA30/Documents/. " "/DATA30/Documents/. ")
+LOG_PATH="/IRONMAN/logs/$LOG_FILE_FORMAT"
+RSY_ROOT=("/IRONMAN30" )
+RST_NAME=("Documents" )
+RSY_SCR=("/IRONMAN20/Documents" )
+RSY_DST=("/IRONMAN30/. " )
 #RCO_ROOT=()
 #RCO_NAME=()
 #RCO_SCR=()
