@@ -9,22 +9,31 @@ set rtp+=/home/common/vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-"Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'itchyny/vim-gitbranch'
 Plugin 'itchyny/lightline.vim'
-Plugin 'davidhalter/jedi-vim'
-"Plugin 'terryma/vim-multiple-cursors'
 Plugin 'preservim/nerdtree'
 Plugin 'dense-analysis/ale'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'trusktr/seti.vim'
+Plugin 'orenhe/pylint.vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plugin 'vim-scripts/Tabmerge'
+Plugin 'mihaifm/vimpanel'
+Plugin 'ryanoasis/vim-devicons'
+
+
+"Plugin 'git://git.wincent.com/command-t.git'
 "Plugin 'jiangmiao/auto-pairs'
 "Plugin 'lervag/vimtex'
-"Plugin 'sjl/badwolf'
 "Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'bluz71/vim-nightfly-guicolors'
 "Plugin 'godlygeek/tabular'
 "Plugin 'plasticboy/vim-markdown'
-Plugin 'trusktr/seti.vim'
+"Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'davidhalter/jedi-vim'
+
 call vundle#end()
 
 
@@ -33,18 +42,78 @@ filetype plugin indent on
 " set Itchyny on
 set laststatus=2
 
+let g:lightline = {
+			\ 'colorscheme': 'wombat',
+      			\ 'active': {
+      			\   'left': [ [ 'mode', 'paste' ],
+      			\             [ 'filename', 'gitbranch', 'readonly', 'modified' ] ],
+      			\   'right': [ [ 'lineinfo' ],
+      			\              [ 'percent' ],
+      			\              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
+			\ },
+      			\ 'component_function': {
+      			\   'gitbranch': 'FugitiveHead'
+      			\ },
+			\}
+
 set completeopt-=preview
 
+" Start NERDTree when Vim is started without file arguments.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 
+" Start NERDTree. If a file is specified, move the cursor to its window.
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" Close the tab if NERDTree is the only window remaining in it.
+"autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+"autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+"    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+
+" Open the existing NERDTree on each new tab.
+"autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+
+let g:NERDTreeQuitOnOpen = 1
+
+
+cabbrev ss VimpanelSessionMake
+cabbrev sl VimpanelSessionLoad
+cabbrev vp Vimpanel
+cabbrev vl VimpanelLoad
+cabbrev vc VimpanelCreate
+cabbrev ve VimpanelEdit
+cabbrev vr VimpanelRemove
+
+
+
+"inoremap <silent><expr> <TAB>
+"      \ pumvisible() ? "\<C-n>" :
+"      \ <SID>check_back_space() ? "\<TAB>" :
+"      \ coc#refresh()
+"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice.
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 
 "let g:jedi#auto_initialization = 0
 "let g:jedi#auto_vim_configuration = 0
-let g:jedi#use_tabs_not_buffers = 1
-let g:jedi#use_splits_not_buffers = "left"
-let g:jedi#show_call_signatures = "0"
-let g:jedi#popup_on_dot = 0
+"let g:jedi#use_tabs_not_buffers = 1
+"let g:jedi#use_splits_not_buffers = "left"
+"let g:jedi#show_call_signatures = "0"
+"let g:jedi#popup_on_dot = 0
+set backspace=indent,eol,start
 
+let g:rustfmt_autosave = 1
+let g:rustfmt_emit_files = 1
+let g:rustfmt_fail_silently = 0
 
+syntax on
 "set cursorcolumn
 "set cursorline
