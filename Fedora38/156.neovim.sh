@@ -1,4 +1,6 @@
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\\n ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+sudo mkdir -p /var/lib/flatpak/exports/share/nvim
+sudo chmod -c 7777 -R /var/lib/flatpak/exports/share/nvim
+git clone --depth 1 https://github.com/wbthomason/packer.nvim /var/lib/flatpak/exports/share/nvim/site/pack/packer/start/packer.nvim
 # Python Debuger
 mkdir ~/.virtualenvs
 cd ~/.virtualenvs
