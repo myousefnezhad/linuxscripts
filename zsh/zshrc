@@ -105,6 +105,8 @@ source $ZSH/oh-my-zsh.sh
 
 autoload -U compinit && compinit
 
+alias vim="nvim"
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"

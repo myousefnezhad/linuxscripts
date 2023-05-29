@@ -6,9 +6,10 @@ sudo mkdir -p /var/lib/flatpak/exports/share/nvim
 sudo chmod -c 7777 -R /var/lib/flatpak/exports/share/nvim
 git clone --depth 1 https://github.com/wbthomason/packer.nvim /var/lib/flatpak/exports/share/nvim/site/pack/packer/start/packer.nvim
 # Python Debuger
+sudo apt install python3 python3-pip python3-venv
 mkdir ~/.virtualenvs
 cd ~/.virtualenvs
-python -m venv debugpy
+python3 -m venv debugpy
 debugpy/bin/python -m pip install debugpy
 # Javascript Debugger
 git clone https://github.com/microsoft/vscode-js-debug ~/.vscode-js-debug
