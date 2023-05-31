@@ -107,11 +107,14 @@ autoload -U compinit && compinit
 
 alias vim="nvim"
 
-if command -v colorls &> /dev/null 
+if command -v lsd &> /dev/null 
 then
-  alias ls="colorls"
+  alias ls="lsd"
 fi
-
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
