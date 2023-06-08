@@ -107,6 +107,9 @@ autoload -U compinit && compinit
 
 alias vim="nvim"
 
+alias setclip="xclip -selection clipboard"
+alias getclip="xclip -selection clipboard -o"
+
 if command -v lsd &> /dev/null 
 then
   alias ls="lsd"
@@ -141,7 +144,6 @@ alias lt='ls --tree'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-
 
 # Startup Script
 source /home/common/install/zstartupscript.sh
