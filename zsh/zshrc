@@ -105,6 +105,7 @@ source $ZSH/oh-my-zsh.sh
 
 autoload -U compinit && compinit
 
+alias yt-dlp="yt-dlp -f mp4"
 alias vim="nvim"
 
 alias setclip="xclip -selection clipboard"
@@ -161,3 +162,5 @@ export XDG_DATA_DIRS="$XDG_DATA_DIRS:/var/lib/flatpak/exports/share"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH=~/.local/bin:$PATH
