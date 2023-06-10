@@ -1,2 +1,2 @@
-ssh -p 1365 tony@thor
+ssh -p 1365 tony@thor.cluster.learningbymachine.com
 

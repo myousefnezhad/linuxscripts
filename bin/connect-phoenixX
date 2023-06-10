@@ -1,2 +1,2 @@
-ssh -Y tony@phoenix
+ssh -Y tony@phoenix.cluster.learningbymachine.com
 

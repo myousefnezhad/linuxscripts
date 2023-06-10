@@ -1,2 +1,2 @@
-ssh -Y tony@jarvis
+ssh -Y tony@jarvis.cluster.learningbymachine.com
 
