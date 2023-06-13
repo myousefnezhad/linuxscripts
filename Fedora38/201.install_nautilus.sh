@@ -19,17 +19,14 @@ rm -rf $HOME/Public
 rm -rf $HOME/Documents
 
 # Creating Links
-ln -sf /DATA/Downloads $HOME/Downloads
-ln -sf /DATA/Documents $HOME/Documents
-ln -sf /DATA/Music $HOME/Music
-ln -sf /DATA/Pictures $HOME/Pictures
-ln -sf /DATA/Videos $HOME/Videos
+ln -sf /IRONMAN/Downloads $HOME/Downloads
+ln -sf /IRONMAN/Documents $HOME/Documents
+ln -sf /IRONMAN/Music $HOME/Music
+ln -sf /IRONMAN/Pictures $HOME/Pictures
+ln -sf /IRONMAN/Videos $HOME/Videos
 ln -sf /home/common $HOME/common
-ln -sf /DATA/Datasets $HOME/datasets
-ln -sf /DATA/Dataset2 $HOME/dataset2
-ln -sf /DATA/Datasets.mini $HOME/datasets.mini
-ln -sf /DATA/Workspace $HOME/workspace
-ln -sf /DATA $HOME/DATA
+ln -sf /IRONMAN/Workspace $HOME/workspace
+ln -sf /IRONMAN $HOME/IRONMAN
 
 # Reset Nautilus
 nautilus -q
