@@ -1,1 +1,0 @@
-../108.flatpak_apps.sh
