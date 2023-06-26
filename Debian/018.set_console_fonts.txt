@@ -9,11 +9,15 @@ FONTSIZE="16x32"
 SCREEN_WIDTH="80"
 
 
-
 STEP 2)
+Create new file /etc/vconsole.conf 
+
+KEYMAP="us"
+FONT="ter-v32b"
 
 
-add to /etc/default/grub
+STEP 3)
+Add to /etc/default/grub
 
 GRUB_GFXMODE=1024x768x32
 GRUB_GFXPAYLOAD_LINUX=keep
