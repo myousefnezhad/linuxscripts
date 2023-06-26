@@ -1,0 +1,27 @@
+STEP 1)
+change /etc/default/console-setup
+
+ACTIVE_CONSOLES="/dev/tty[1-6]"
+CHARMAP="UTF-8"
+CODESET="guess"
+FONTFACE="TerminusBold"
+FONTSIZE="16x32"
+SCREEN_WIDTH="80"
+
+
+
+STEP 2)
+
+
+add to /etc/default/grub
+
+GRUB_GFXMODE=1024x768x32
+GRUB_GFXPAYLOAD_LINUX=keep
+
+sudo grub-mkconfig -o /boot/efi/EFI/debian/grub.cfg
+
+
+
+
+
+
