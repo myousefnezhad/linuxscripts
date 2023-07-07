@@ -24,3 +24,7 @@ rt.setup({
     },
   },
 })
+
+require("mason").setup({
+  PATH = "append"
+})
