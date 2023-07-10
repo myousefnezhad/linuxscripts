@@ -1,4 +1,4 @@
-sudo apt install python3 python3-pip python3-venv -y
+sudo pacman -Syu python3 python-pip 
 mkdir -p ~/.virtualenvs
 cd ~/.virtualenvs
 python3 -m venv debugpy
