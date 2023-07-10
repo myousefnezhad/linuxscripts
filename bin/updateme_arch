@@ -1,0 +1,6 @@
+cd /home/common/install
+git pull
+cd
+sudo pacman -Syu
+yay -Syu
+sudo flatpak update -y
