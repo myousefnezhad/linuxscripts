@@ -9,6 +9,13 @@ FONTSIZE="16x32"
 SCREEN_WIDTH="80"
 
 
+Then run:
+
+setupcon
+
+to activate the changes.
+
+
 STEP 2)
 Create new file /etc/vconsole.conf 
 
