@@ -1,4 +1,9 @@
 STEP 1)
+A)
+
+sudo dpkg-reconfigure console-setup
+
+B)
 change /etc/default/console-setup
 
 ACTIVE_CONSOLES="/dev/tty[1-6]"
