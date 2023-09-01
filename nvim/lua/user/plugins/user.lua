@@ -2,6 +2,7 @@ return {
   'mxsdev/nvim-dap-vscode-js',
   'simrat39/rust-tools.nvim',
   'airblade/vim-gitgutter',
+  'codota/tabnine-nvim',
   -- You can also add new plugins here as well:
   -- Add plugins, the lazy syntax
   -- "andweeb/presence.nvim",
