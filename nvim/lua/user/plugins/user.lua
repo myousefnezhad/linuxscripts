@@ -3,6 +3,7 @@ return {
   'simrat39/rust-tools.nvim',
   'airblade/vim-gitgutter',
   'codota/tabnine-nvim',
+  'tzachar/cmp-tabnine',
   -- You can also add new plugins here as well:
   -- Add plugins, the lazy syntax
   -- "andweeb/presence.nvim",
