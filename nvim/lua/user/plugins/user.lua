@@ -13,14 +13,6 @@ return {
       crates.show()
     end,
   },
-  -- {
-  --   "hrsh7th/nvim-cmp",
-  --   opts = function()
-  --     local M = require("plugins.cmd")
-  --     table.insert(M.source, { name = "crates" })
-  --     return M
-  --   end,
-  -- },
   -- You can also add new plugins here as well:
   -- Add plugins, the lazy syntax
   -- "andweeb/presence.nvim",
