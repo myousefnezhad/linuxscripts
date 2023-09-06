@@ -1,0 +1,4 @@
+
+# NFS JARICHO
+172.20.20.70:/WORKSPACE                 /WORKSPACE          nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0 
+172.20.20.70:/DOWNLOADS                 /DOWNLOADS          nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0 

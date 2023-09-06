@@ -1,7 +1,4 @@
 
 # NFS JARVIS
-172.20.20.10:/WORKSPACE                     /WORKSPACE          nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0 
-172.20.20.10:/WORKSPACE/Downloads           /WORKSPACE/Downloads   nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0 
-172.20.20.10:/JARVIS                        /JARVIS          nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0 
 172.20.20.10:/JARVIS1                       /JARVIS1          nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0 
 172.20.20.10:/JARVIS2                       /JARVIS2          nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0
