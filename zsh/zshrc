@@ -148,7 +148,9 @@ alias lt='ls --tree'
 
 # Startup Script
 source /home/common/install/zstartupscript.sh
-source <(helm completion zsh)
+if which helm >/dev/null; then
+  source <(helm completion zsh)
+fi
 # Common bin dir
 export PATH="/usr/local/go/bin:/home/common/bin:/var/lib/snapd/snap/bin:/var/lib/flatpak/exports/share:$PATH"
 
