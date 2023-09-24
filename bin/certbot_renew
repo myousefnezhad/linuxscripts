@@ -1,0 +1,28 @@
+LOG_FILE_FORMAT=certbot_$(date +%Y.%m.txt)
+LOG_PATH="/IRONMAN/logs/$LOG_FILE_FORMAT"
+
+certbot certonly --manual --force-renewal \
+    -d cluster.learningbymachine.com \
+    -d docker.yousefnezhad.com \
+    -d drive.yousefnezhad.com \
+    -d code.yousefnezhad.com \
+    -d overleaf.yousefnezhad.com \
+    -d pfsense.cluster.learningbymachine.com \
+    -d proxmox.cluster.learningbymachine.com \
+    -d nextcloud.learningbymachine.com \
+    -d colab.learningbymachine.com \
+    -d medai.learningbymachine.com \
+    -d app.medai.learningbymachine.com \
+    -d sina.learningbymachine.com \
+    -d api.sina.learningbymachine.com \
+    -d demo.learningbymachine.com \
+    -d api.demo.learningbymachine.com \
+    -d monitor.cluster.learningbymachine.com \
+    -d marvel.family \
+    -d www.marvel.family \
+    --agree-tos \
+    --preferred-challenges dns >> $LOG_PATH
+
+cp /etc/letsencrypt/live/cluster.learningbymachine.com/fullchain.pem /etc/pve/local/pve-ssl.pem
+cp /etc/letsencrypt/live/cluster.learningbymachine.com/privkey.pem /etc/pve/local/pve-ssl.key
+systemctl restart pveproxy
