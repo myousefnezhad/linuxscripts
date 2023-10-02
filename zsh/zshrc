@@ -165,7 +165,9 @@ export SHELL=/bin/zsh
 export XDG_DATA_HOME="/var/lib/flatpak/exports/share"
 export XDG_DATA_DIRS="$XDG_DATA_DIRS:/var/lib/flatpak/exports/share"
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:/home/tony/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib #:/home/common/miniconda3/envs/tf/lib
+# CUDA
+export PATH="$PATH:/usr/local/cuda-12.2/bin"
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-12.2/lib64:/usr/local/lib:/home/tony/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib #:/home/common/miniconda3/envs/tf/lib
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
