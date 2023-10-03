@@ -118,7 +118,7 @@ if command -v lsd &> /dev/null
 then
   alias ls="lsd"
 fi
-alias l='/bin/ls'
+alias l='/bin/ls --color'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
