@@ -22,6 +22,7 @@ return {
         "prettier",
         "pylint",
         "prettierd",
+        -- "sql-formatter",
         -- "stylua",
       })
     end,

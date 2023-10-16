@@ -71,7 +71,8 @@ return {
   polish = function()
     require("user.dap.nodejs")
     require("user.dap.rust")
-    require("user.lsp.sqlls")
+    -- require("user.lsp.sqlfmt")
+    -- require("user.lsp.sqlls")
     require("user.lsp.tabnine")
     require("user.lsp.gopls")
     -- Set up custom filetypes
