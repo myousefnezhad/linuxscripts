@@ -74,7 +74,6 @@ return {
     require("user.lsp.sqlls")
     require("user.lsp.tabnine")
     require("user.lsp.gopls")
-
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
