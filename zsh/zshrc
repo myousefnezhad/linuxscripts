@@ -178,3 +178,13 @@ export PATH=~/.local/bin:$PATH
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
+function tmux_select()
+{
+    if [[ $# == 0 ]] && command tmux ls >& /dev/null; then
+        command tmux attach \; choose-tree -s
+    else
+        command tmux new-session -s tony_desk
+
+    fi
+}
+
