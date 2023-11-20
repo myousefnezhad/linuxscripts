@@ -1,0 +1,1 @@
+psql -h db.cluster.learningbymachine.com -p 9999 -U pgpool postgres -c "show pool_nodes"
