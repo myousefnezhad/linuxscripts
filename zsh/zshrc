@@ -11,8 +11,8 @@ export ZSH="/home/common/oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 [[ $TTY == *"tty"* ]] && ZSH_THEME="maran"
-[[ "$TERM_PROGRAM" == "vscode" ]] && ZSH_THEME="vscode"
-
+[[ "$TERM_PROGRAM" == "vscode" ]] && ZSH_THEME="maran"
+[[ -n "$JUPYTER_SERVER_ROOT" ]] && ZSH_THEME="maran"
 
 POWERLEVEL9K_MODE="nerdfont-complete"
 
