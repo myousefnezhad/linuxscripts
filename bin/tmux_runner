@@ -1,0 +1,5 @@
+if [[ $# == 0 ]] && command tmux ls >& /dev/null; then
+   command tmux attach \; choose-tree -s
+else
+   command tmux new-session -s tony_desk
+fi
