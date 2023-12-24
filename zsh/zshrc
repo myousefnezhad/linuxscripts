@@ -108,7 +108,7 @@ source $ZSH/oh-my-zsh.sh
 
 autoload -U compinit && compinit
 
-alias yt-dlp="yt-dlp -f mp4"
+alias yt-dlp="/usr/bin/yt-dlp -f mp4"
 #alias vim="nvim"
 
 alias setclip="xclip -selection clipboard"
