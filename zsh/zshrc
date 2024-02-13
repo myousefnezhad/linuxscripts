@@ -155,7 +155,7 @@ if which helm >/dev/null; then
   source <(helm completion zsh)
 fi
 # Common bin dir
-export PATH="/usr/local/go/bin:/home/common/bin:/var/lib/snapd/snap/bin:/var/lib/flatpak/exports/share:$PATH"
+export PATH="/usr/local/go/bin:/home/common/bin:/var/lib/snapd/snap/bin:/var/lib/flatpak/exports/share:/home/common/flutter/bin:$PATH"
 
 export GOPATH="/WORKSPACE/go"
 
@@ -179,6 +179,13 @@ export PATH=~/.local/bin:$PATH
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 alias kswitch='kubectl config use-context'
+
+if [ -d "/home/common/libtorch/" ]; then
+    export LIBTORCH="/home/common/libtorch/"
+    export LD_LIBRARY_PATH=${LIBTORCH}/lib:$LD_LIBRARY_PATH
+    export LIBTORCH_BYPASS_VERSION_CHECK=0
+fi
+
 
 function tmux_select()
 {
