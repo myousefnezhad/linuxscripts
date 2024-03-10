@@ -182,6 +182,8 @@ alias kswitch='kubectl config use-context'
 
 if [ -d "/home/common/libtorch/" ]; then
     export LIBTORCH="/home/common/libtorch/"
+    export LIBTORCH_INCLUDE="$LIBTORCH"
+    export LIBTORCH_LIB="$LIBTORCH"
     export LD_LIBRARY_PATH=${LIBTORCH}/lib:$LD_LIBRARY_PATH
     export LIBTORCH_BYPASS_VERSION_CHECK=0
 fi
