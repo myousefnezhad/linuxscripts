@@ -189,6 +189,10 @@ if [ -d "/home/common/libtorch/" ]; then
 fi
 
 
+if [ -d "/usr/bin/java" ]; then
+    export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+fi
+
 function tmux_select()
 {
     if [[ $# == 0 ]] && command tmux ls >& /dev/null; then
