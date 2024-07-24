@@ -12,4 +12,4 @@ find /JARVIS2   -name "._*" -print -exec rm -rf {} \;
 find /JERICHO1  -name "._*" -print -exec rm -rf {} \;
 find /WORKSPACE -name "._*" -print -exec rm -rf {} \;
 find /DOWNLOADS -name "._*" -print -exec rm -rf {} \;
-find /MAC       -name "._*" -print -exec rm -rf {} \;
+find /MAX       -name "._*" -print -exec rm -rf {} \;
