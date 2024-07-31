@@ -16,7 +16,7 @@ sudo mkdir -p \
   /DOWNLOADS \
   /WORKSPACE \
   /MAX \
-  /ULTRAL
+  /ULTRA
 
 echo "# NFS IRONMAN" >> /etc/fstab
 echo "172.20.10.1:/IRONMAN                        /IRONMAN           nfs 	 _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0" >> /etc/fstab 
@@ -41,6 +41,7 @@ echo "172.20.20.70:/DOWNLOADS                     /DOWNLOADS        nfs     _net
 echo " " >> /etc/fstab
 echo "# NFS MAX" >> /etc/fstab
 echo "172.20.40.20:/Users/tony/MAX                /MAX              nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0" >> /etc/fstab
+echo "172.20.40.40:/Users/tony/ULTRA              /ULTRA              nfs     _netdev,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10 0 0" >> /etc/fstab
 echo " " >> /etc/fstab
 sudo systemctl daemon-reload
 sudo mount -a

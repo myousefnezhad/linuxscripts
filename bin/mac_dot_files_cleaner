@@ -13,3 +13,4 @@ find /JERICHO1  -name "._*" -print -exec rm -rf {} \;
 find /WORKSPACE -name "._*" -print -exec rm -rf {} \;
 find /DOWNLOADS -name "._*" -print -exec rm -rf {} \;
 find /MAX       -name "._*" -print -exec rm -rf {} \;
+find /ULTRA     -name "._*" -print -exec rm -rf {} \;
