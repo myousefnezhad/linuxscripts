@@ -19,3 +19,13 @@ if astronvim.default_colorscheme then
 end
 
 require("astronvim.utils").conditional_func(astronvim.user_opts("polish", nil, false), true)
+
+vim.api.nvim_exec(
+  [[
+  augroup SqlCompletion
+    autocmd!
+    autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni
+  augroup END
+]],
+  false
+)

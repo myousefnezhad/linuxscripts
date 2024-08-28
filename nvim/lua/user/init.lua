@@ -73,7 +73,7 @@ return {
     require("user.dap.rust")
     require("user.dap.flutter")
     -- require("user.lsp.sqlfmt")
-    -- require("user.lsp.sqlls")
+    require("user.lsp.sqls")
     require("user.lsp.tabnine")
     require("user.lsp.gopls")
     -- Set up custom filetypes
