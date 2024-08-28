@@ -6,6 +6,22 @@ return {
   'codota/tabnine-nvim',
   'tzachar/cmp-tabnine',
   {
+    'tpope/vim-dadbod',
+    cmd = { 'DB', 'DBUI', 'DBPrompt' },
+    config = function()
+    end,
+  },
+  {
+    'kristijanhusak/vim-dadbod-ui',
+    cmd = { 'DBUI', 'DBUIToggle', 'DBUIFindBuffer' },
+    dependencies = { 'tpope/vim-dadbod' },
+  },
+  {
+    'kristijanhusak/vim-dadbod-completion',
+    ft = { 'sql', 'mysql', 'plsql' },
+    dependencies = { 'tpope/vim-dadbod' },
+  },
+  {
     'saecki/crates.nvim',
     ft = { 'rust', 'toml' },
     config = function(_, opts)
