@@ -79,7 +79,7 @@
 #  
 #  Local IP addresses (such as 127.0.0.1 and ::1) are allowed as local, along
 #  with hostnames configured in local_hostnames.
-#c.NotebookApp.allow_remote_access = False
+c.NotebookApp.allow_remote_access = True
 
 ## Whether to allow the user to run the notebook as root.
 c.NotebookApp.allow_root = True
@@ -90,7 +90,7 @@ c.NotebookApp.allow_root = True
 ## The base URL for the notebook server.
 #  
 #  Leading and trailing slashes can be omitted, and will automatically be added.
-#c.NotebookApp.base_url = '/'
+c.NotebookApp.base_url = '/'
 
 ## Specify what command to use to invoke a web browser when opening the notebook.
 #  If not specified, the default browser will be determined by the `webbrowser`
@@ -346,7 +346,7 @@ c.NotebookApp.port = 1365
 ## Whether to trust or not X-Scheme/X-Forwarded-Proto and X-Real-Ip/X-Forwarded-
 #  For headerssent by the upstream reverse proxy. Necessary if the proxy handles
 #  SSL
-#c.NotebookApp.trust_xheaders = False
+c.NotebookApp.trust_xheaders = True
 
 ## DEPRECATED, use tornado_settings
 #c.NotebookApp.webapp_settings = {}
@@ -677,7 +677,7 @@ c.NotebookApp.port = 1365
 #c.ContentsManager.pre_save_hook = None
 
 ## 
-#c.ContentsManager.root_dir = '/'
+c.ContentsManager.root_dir = '/'
 
 ## The base name used when creating untitled directories.
 #c.ContentsManager.untitled_directory = 'Untitled Folder'
@@ -739,7 +739,7 @@ c.NotebookApp.port = 1365
 #c.FileContentsManager.post_save_hook = None
 
 ## 
-#c.FileContentsManager.root_dir = ''
+c.FileContentsManager.root_dir = '/'
 
 ## DEPRECATED, use post_save_hook. Will be removed in Notebook 5.0
 #c.FileContentsManager.save_script = False

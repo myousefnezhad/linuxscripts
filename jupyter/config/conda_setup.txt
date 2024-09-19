@@ -1,0 +1,14 @@
+# Base
+conda activate
+conda install -c conda-forge notebook
+conda install -c anaconda ipykernel
+sudo mkdir /usr/local/share/jupyter
+sudo chmod -c 777 -R /usr/local/share/jupyter
+
+
+Install service as file 304 in dists
+
+# Kernel
+conda activate <name>
+conda install -c anaconda ipykernel
+python -m ipykernel install --name <name> --display-name "Python <version> (<name>)"\n

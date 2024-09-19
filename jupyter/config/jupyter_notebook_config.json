@@ -1,5 +1,5 @@
 {
-  "NotebookApp": {
-    "password": "sha1:dba426fc08ec:e5aae9497995dcc027d88cae349c61896d347fcd"
-  }
+  "IdentityProvider": {
+	      "hashed_password": "argon2:$argon2id$v=19$m=10240,t=10,p=8$sTFo+XO4F/H4Qi644by14w$Waf4RBZnjeZwBXmTqkjUH1Fb1Km4aKtR7uA4ZfOp7Qg"
+	        }
 }
