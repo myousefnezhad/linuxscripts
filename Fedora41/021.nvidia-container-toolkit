@@ -1,0 +1,5 @@
+sudo dnf install -y xorg-x11-drv-nvidia-cuda
+sudo dnf copr enable @ai-ml/nvidia-container-toolkit
+sudo dnf install -y nvidia-container-toolkit nvidia-container-toolkit-selinux
+sudo nvidia-ctk cdi generate -output /etc/cdi/nvidia.yaml
+sudo dnf install -y nvtop
