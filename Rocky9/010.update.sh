@@ -3,5 +3,5 @@ sudo echo "fastestmirror=True" >> /etc/dnf/dnf.conf
 cat /etc/dnf/dnf.conf
 sudo dnf update -y
 
-sudo dnf install -y vim mc htop 
-sudo sed -i 's|/usr/bin/nano|/usr/bin/vim|g' /etc/profile.d/nano-default-editor.sh
+sudo dnf install -y vim mc 
+#sudo sed -i 's|/usr/bin/nano|/usr/bin/vim|g' /etc/profile.d/nano-default-editor.sh
