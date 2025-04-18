@@ -1,0 +1,38 @@
+STEP 1)
+
+sudo vim /etc/mkinitcpio.conf
+
+then add consolefont to HOOKS
+
+such that:
+HOOKS=(base udev autodetect modconf block filesystems keyboard fsck consolefont)
+
+
+STEP 2)
+sudo vim /etc/vconsole.conf
+
+and add
+
+FONT="ter-powerline-v32b"
+FONT="latarcyrheb-sun32"
+
+
+STEP 3)
+
+sudo grub-mkfont -s 30 -o /boot/grubfont.pf2 /usr/share/fonts/TTF/DejaVuSansMono.ttf
+
+add to /etc/default/grub
+
+GRUB_FONT="/boot/grubfont.pf2"
+GRUB_THEME="/usr/share/grub/themes/starfield/theme.txt"
+GRUB_GFXMODE=1024x768x32
+GRUB_GFXPAYLOAD_LINUX=keep
+
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+
+
+
+
+
+
