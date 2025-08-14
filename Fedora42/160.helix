@@ -1,1 +1,2 @@
+mkdir -p $HOME/.config/helix
 ln /home/common/install/helix.toml $HOME/.config/helix/config.toml
